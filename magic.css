@@ -1,0 +1,171 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+/*设置最外部div容器布局，添加3d渲染和动画效果*/
+.magic_view{
+    width: 80px;
+    height: 160px;
+    margin: 240px auto;
+    font-size: 70px;
+    text-align: center;
+    -webkit-animation-name: animation;
+    -webkit-animation-timing-function: ease-in-out;
+    -webkit-animation-iteration-count: infinite;
+    -webkit-animation-duration: 6s;
+    -webkit-animation-delay: 1s;
+    -webkit-transform-origin: 60px 40px 0;
+    -webkit-transform-style: preserve-3d;
+    /*-webkit-perspective: 300px;*/
+}
+.magic_view *{
+    -webkit-transform-style: preserve-3d;
+}
+/*定义魔方每一个小方格div样式*/
+.magic_view div div{
+    width: 80px;
+    height: 80px;
+    position: absolute;
+    border: 2px solid lightgoldenrodyellow;
+    border-radius: 5px;
+    margin: -2px 0 0 -2px;
+    text-align: center;
+}
+/*定义魔方每一个立体小方块的3d空间位置*/
+.magic_view_box{
+    position: absolute;
+}
+.magic_view_box1{
+    margin-left: 82px;
+}
+.magic_view_box2{
+    -webkit-transform: translateZ(82px);
+}
+.magic_view_box3{
+    margin-left: -82px;
+}
+.magic_view_box4{
+    -webkit-transform: translateZ(-82px);
+}
+.magic_view_box5{
+    margin-left: 82px;
+    -webkit-transform: translateZ(82px);
+}
+.magic_view_box6{
+    margin-left: 82px;
+    -webkit-transform: translateZ(-82px);
+}
+.magic_view_box7{
+    margin-left: -82px;
+    -webkit-transform: translateZ(82px);
+ }
+.magic_view_box8{
+    margin-left: -82px;
+    -webkit-transform: translateZ(-82px);
+}
+.magic_view_boxb{
+    -webkit-transform: translateY(-82px);
+}
+.magic_view_boxb1{
+    margin-left: 82px;
+    -webkit-transform: translateY(-82px);
+}
+.magic_view_boxb2{
+    -webkit-transform: translate3D(0,-82px,82px);
+}
+.magic_view_boxb3{
+    margin-left: -82px;
+    -webkit-transform: translateY(-82px);
+}
+.magic_view_boxb4{
+    -webkit-transform: translate3D(0,-82px,-82px);
+}
+.magic_view_boxb5{
+    margin-left: 82px;
+    -webkit-transform: translate3D(0,-82px,82px);
+}
+.magic_view_boxb6{
+    margin-left: 82px;
+    -webkit-transform: translate3D(0,-82px,-82px);
+}
+.magic_view_boxb7{
+    margin-left: -82px;
+    -webkit-transform: translate3D(0,-82px,82px);
+}
+.magic_view_boxb8{
+    margin-left: -82px;
+    -webkit-transform: translate3D(0,-82px,-82px);
+}
+.magic_view_boxc{
+    -webkit-transform: translateY(82px);
+}
+.magic_view_boxc1{
+    margin-left: 82px;
+    -webkit-transform: translateY(82px);
+}
+.magic_view_boxc2{
+    -webkit-transform: translate3D(0,82px,82px);
+}
+.magic_view_boxc3{
+    margin-left: -82px;
+    -webkit-transform: translateY(82px);
+}
+.magic_view_boxc4{
+    -webkit-transform: translate3D(0,82px,-82px);
+}
+.magic_view_boxc5{
+    margin-left: 82px;
+    -webkit-transform: translate3D(0,82px,82px);
+}
+.magic_view_boxc6{
+    margin-left: 82px;
+    -webkit-transform: translate3D(0,82px,-82px);
+}
+.magic_view_boxc7{
+    margin-left: -82px;
+    -webkit-transform: translate3D(0,82px,82px);
+}
+.magic_view_boxc8{
+    margin-left: -82px;
+    -webkit-transform: translate3D(0,82px,-82px);
+}
+/*定义六个朝向的面的颜色*/
+.box_a{
+    -webkit-transform: translateZ(40px);
+    background-color: rgba(255, 0, 0, 0.8);
+}
+.box_b{
+    -webkit-transform: rotateX(-90deg) translateZ(40px);
+    background-color: rgba(255, 137, 34, 0.8);
+}
+.box_c{
+    -webkit-transform: rotateX(90deg) translateZ(40px);
+    background-color: rgba(22, 103, 25, 0.8);
+}
+.box_d{
+    -webkit-transform: translateZ(-40px);
+    background-color: rgba(0, 0, 255, 0.8);
+}
+.box_e{
+    -webkit-transform: rotateY(90deg) translateZ(-40px);
+    background-color: rgba(255, 255, 0, 0.8);
+}
+.box_f{
+    -webkit-transform: rotateY(-90deg) translateZ(-40px);
+    background-color: rgba(0, 255, 0, 0.8);
+}
+/*背景图片的样式*/
+img{
+    width: 75px;
+    height: 75px;
+    background-position: center;
+}
+/*旋转动画效果*/
+@-webkit-keyframes animation {
+    from,to{}
+    16%{-webkit-transform: rotateY(90deg);}
+    33%{-webkit-transform: rotateY(90deg)rotateZ(135deg);}
+    50%{-webkit-transform: rotateY(225deg)rotateZ(135deg);}
+    66%{-webkit-transform: rotateY(135deg)rotateX(135deg);}
+    83%{-webkit-transform: rotateX(135deg);}
+}
